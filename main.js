@@ -37,10 +37,11 @@ function questionGen() {
                 </ul
                 </fieldset>
             </form>
-        </div>`
+        </div>`;
         
     } else {
         alert('quiz end!');
+        // placeholder for quiz end
     }
 };
 
@@ -68,6 +69,8 @@ function quizStart(){
     //on click, hide .start
     //needs to create question form
     $('.submit').on('click', function(event) {
+        questionCounter();
+        renderQuestion();
     $('.start').remove();
     $('.questionAnswerForm').css('display','block');
     });
@@ -75,11 +78,11 @@ function quizStart(){
 
 
 function userAnswer(){
-     
-}
+     // if user selects the correct answer, send to correct and vice versa
+
+};
 
 function isCorrect(){
-    // handles click
     //returns HTML that tells user answer is correct, points to countScore
     // renders next button
 };
@@ -99,7 +102,8 @@ function quizEnd(){
 
 function callQuiz(){
     quizStart();
-    questionCounter();
-    renderQuestion();
+   
+    
 };
+
 callQuiz();

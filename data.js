@@ -26,4 +26,4 @@ const STORE = [
      ],
      correct:'c'
     }
-]
+];
