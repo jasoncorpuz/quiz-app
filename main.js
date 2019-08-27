@@ -103,25 +103,42 @@ function userAnswer(){
 };
 
 function isCorrect(){
-    console.log('is correct')
-    $('.questionAnswerForm').html(`<div class ='correct'><p>correct!</p></div>`)
+    console.log('is correct');
+    $('.questionAnswerForm').html(`
+    <div class ='correct'>
+    <p>correct!</p>
+    <button class='nextButton'>next</button>
+    </div>`);
+    countScore();
     //returns HTML that tells user answer is correct, points to countScore
     // renders next button
 };
 function isIncorrect(){
     console.log('is incorrect')
-    $('.questionAnswerForm').html(`<div class ='incorrect'><p>incorrect!</p></div>`)
+    $('.questionAnswerForm').html(`
+    <div class ='incorrect'>
+    <p>incorrect!</p>
+    <button class='nextButton'>next</button>
+    </div>`)
     //returns HTML that tells user the answer is incorrect
     //renders next button
 };
 
-
+function renderNext(){
+    //takes click, adds to question counter, and renders next question 
+    console.log('render next running')
+    $('main').on('click','.nextButton', function (event) {
+        questionCounter();
+        renderQuestion();
+        userAnswer();
+    })
+};
 
 function quizEnd(){
     //returns feedback html
     // if score > 8 you did great!
     // if not, try again
-}
+};
 
 
 function callQuiz(){
