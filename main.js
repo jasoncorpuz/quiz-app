@@ -93,7 +93,7 @@ function userAnswer(){
        let answer = selected.val();
        let correctAnswer = STORE[questionNumber].correct;
        if (answer === correctAnswer){
-            selected.parent().css('display','none');
+            selected.parent().addClass('correct');
            isCorrect();
        } else{
            selected.parent().addClass('incorrect');
