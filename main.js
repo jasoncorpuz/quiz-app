@@ -58,15 +58,16 @@ function renderQuestion() {
 
 
  function questionCounter(){
-    $('.submit').on('click',function(event){
+    //$('.submit').on('click',function(event){
         questionNumber++;
-        $('.questionNumber').text(questionNumber)
-    });
+        $('.questionNumber').text(questionNumber);
+        //$('.questionNumber').text(questionNumber)});
     console.log('question counter working') 
 }
 
 function countScore(){
     score++;
+    $('.score').text(score);
     console.log('count score working')
 };
 
@@ -88,7 +89,7 @@ function quizStart(){
 function userAnswer(){
      // if user selects the correct answer, send to correct and vice versa
    $('form').on('submit', function(event){
-       event:preventDefault();
+       event.preventDefault();
        let selected = $('input:checked');
        let answer = selected.val();
        let correctAnswer = STORE[questionNumber].correct;
@@ -110,6 +111,7 @@ function isCorrect(){
     <button class='nextButton'>next</button>
     </div>`);
     countScore();
+    renderNext();
     //returns HTML that tells user answer is correct, points to countScore
     // renders next button
 };
@@ -120,6 +122,7 @@ function isIncorrect(){
     <p>incorrect!</p>
     <button class='nextButton'>next</button>
     </div>`)
+    renderNext();
     //returns HTML that tells user the answer is incorrect
     //renders next button
 };
@@ -127,7 +130,7 @@ function isIncorrect(){
 function renderNext(){
     //takes click, adds to question counter, and renders next question 
     console.log('render next running')
-    $('main').on('click','.nextButton', function (event) {
+    $('.nextButton').on('click', function (event) {
         questionCounter();
         renderQuestion();
         userAnswer();
@@ -143,7 +146,6 @@ function quizEnd(){
 
 function callQuiz(){
     quizStart();
-    questionCounter();
     renderQuestion();
     userAnswer();
 };

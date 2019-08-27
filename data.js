@@ -2,7 +2,7 @@
     {
      question: 'Which franchise is the character Mario from?',
      answer: [
-          'Sony','Nintendo', 'Microsoft', 'Ubisoft'
+          'Nintendo','Sony', 'Microsoft', 'Ubisoft'
      ],
      correct: 'Nintendo'
     },
