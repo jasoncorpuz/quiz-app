@@ -1,20 +1,17 @@
-// to access question STORE[questionNumber].question
-// to access answer  STORE[questionNumber].answer[answerNumber]
-
-const STORE = [
+ const STORE = [
     {
      question: 'Which franchise is the character Mario from?',
      answer: [
           'Sony','Nintendo', 'Microsoft', 'Ubisoft'
      ],
-     correct: 'b'
+     correct: 'Nintendo'
     },
     {
      question: "What genre of game is Super Mario World(SNES)?",
      answer: [
          'First Person Shooter','Role Playing Game', 'Platformer', 'Action/Adventure'
      ],
-     correct:'c'
+     correct:'Platformer'
     },
     {
      question: 'What does MMORPG stand for?',
@@ -24,6 +21,8 @@ const STORE = [
          'Massively Multiplayer Online Role-Playing Game',
          'Mini Mega Only Real PLaying Game',
      ],
-     correct:'c'
+     correct:'Massively Multiplayer Online Role-Playing Game'
     }
 ];
+ 
+

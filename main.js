@@ -10,34 +10,39 @@ The end of the quiz will provide them with the final score. */
 let score = 0;
 let questionNumber = 0;
 
+
+
 function questionGen() {
+    console.log('question gen working');
     if(questionNumber < STORE.length) {
         return `
-        <div class = "question-${questionNumber}>
+        <div class = 'question-${questionNumber}'}>
             <form>
             <h2> ${STORE[questionNumber].question} </h2>
                 <fieldset> 
                 <ul>
                 <li>
-                <input type ='radio' id ='a' name='question' value ='question'>
+                <input type ='radio' id ='a' name='question' value ='${STORE[questionNumber].answer[0]}'>
                 <label for ='answer1'> ${STORE[questionNumber].answer[0]}</label>
                 </li>
                 <li>
-                <input type ='radio' id ='b' name='question' value ='question'>
+                <input type ='radio' id ='b' name='question' value =' ${STORE[questionNumber].answer[1]}'>
                 <label for ='answer2'> ${STORE[questionNumber].answer[1]} </label>
                 </li>
                 <li>
-                <input type ='radio' id ='c' name='question' value ='question'>
+                <input type ='radio' id ='c' name='question' value ='${STORE[questionNumber].answer[2]}'>
                 <label for ='answer3'> ${STORE[questionNumber].answer[2]} </label>
                 </li>
                 <li>
-                <input type ='radio' id ='d' name='question' value ='question'>
+                <input type ='radio' id ='d' name='question' value ='${STORE[questionNumber].answer[3]}'>
                 <label for ='answer4'> ${STORE[questionNumber].answer[3]} </label>
                 </li>
-                </ul
+                </ul>
+                <button type='submit' class='submit'>submit</button>
                 </fieldset>
             </form>
         </div>`;
+        
         
     } else {
         alert('quiz end!');
@@ -45,14 +50,19 @@ function questionGen() {
     }
 };
 
+
 function renderQuestion() {
     $('.questionAnswerForm').html(questionGen());
+    console.log('render question');
 }
 
 
-function questionCounter(){
-    questionNumber++;
-    console.log('question counter working')
+ function questionCounter(){
+    $('.submit').on('click',function(event){
+        questionNumber++;
+        $('.questionNumber').text(questionNumber)
+    });
+    console.log('question counter working') 
 }
 
 function countScore(){
@@ -68,9 +78,7 @@ function quizStart(){
     //INIT HTML EXISTS IN INDEX
     //on click, hide .start
     //needs to create question form
-    $('.submit').on('click', function(event) {
-        questionCounter();
-        renderQuestion();
+    $('.submit').on('click', function(event) { 
     $('.start').remove();
     $('.questionAnswerForm').css('display','block');
     });
@@ -79,14 +87,30 @@ function quizStart(){
 
 function userAnswer(){
      // if user selects the correct answer, send to correct and vice versa
-
+   $('form').on('submit', function(event){
+       event:preventDefault();
+       let selected = $('input:checked');
+       let answer = selected.val();
+       let correctAnswer = STORE[questionNumber].correct;
+       if (answer === correctAnswer){
+            selected.parent().css('display','none');
+           isCorrect();
+       } else{
+           selected.parent().addClass('incorrect');
+           isIncorrect();
+       }
+    })
 };
 
 function isCorrect(){
+    console.log('is correct')
+    $('.questionAnswerForm').html(`<div class ='correct'><p>correct!</p></div>`)
     //returns HTML that tells user answer is correct, points to countScore
     // renders next button
 };
 function isIncorrect(){
+    console.log('is incorrect')
+    $('.questionAnswerForm').html(`<div class ='incorrect'><p>incorrect!</p></div>`)
     //returns HTML that tells user the answer is incorrect
     //renders next button
 };
@@ -102,8 +126,13 @@ function quizEnd(){
 
 function callQuiz(){
     quizStart();
-   
-    
+    questionCounter();
+    renderQuestion();
+    userAnswer();
 };
 
-callQuiz();
+$(callQuiz);
+
+
+//add breakpoints whenever you want data to render
+//quiz start 

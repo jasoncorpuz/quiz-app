@@ -27,7 +27,7 @@ li {
     display: inline-block;
     font-family: monospace;
     font-size: 20px;
-    margin: 10px auto;
+    margin: 10px 25px;
 }
 
 .submit {
@@ -74,5 +74,18 @@ h2 {
 
 .questionAnswerForm{
     display:none;
-    size: 100000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+fieldset{
+    width: 75%;
+}
+
+.correct {
+    background-color: black;
+}
+
+.incorrect{
+    background:green;
 }
