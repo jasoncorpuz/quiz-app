@@ -121,7 +121,7 @@ function isIncorrect(){
     console.log('is incorrect')
     $('.questionAnswerForm').html(`
     <div class ='incorrect'>
-    <p>incorrect!</p>
+    <p>Incorrect! The correct answer is ${STORE[questionNumber].correct}.</p>
     <button class='nextButton'>next</button>
     </div>`)
     renderNext();

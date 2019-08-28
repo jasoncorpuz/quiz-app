@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+html{
+    background-image: url(https://cdn.wallpapersafari.com/79/1/F39W4g.png);
+    font-family: monospace;
+}
+
 p {
     color:red;
     font-size: 40px;
