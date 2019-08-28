@@ -26,7 +26,7 @@ function questionGen() {
                 <label for ='answer1'> ${STORE[questionNumber].answer[0]}</label>
                 </li>
                 <li>
-                <input type ='radio' id ='b' name='question' value =' ${STORE[questionNumber].answer[1]}'>
+                <input type ='radio' id ='b' name='question' value ='${STORE[questionNumber].answer[1]}'>
                 <label for ='answer2'> ${STORE[questionNumber].answer[1]} </label>
                 </li>
                 <li>
@@ -46,6 +46,7 @@ function questionGen() {
         
     } else {
         alert('quiz end!');
+        $('.questionAnswerForm').html(quizEnd());
         // placeholder for quiz end
     }
 };
@@ -60,7 +61,7 @@ function renderQuestion() {
  function questionCounter(){
     //$('.submit').on('click',function(event){
         questionNumber++;
-        $('.questionNumber').text(questionNumber);
+        $('.questionNumber').text(questionNumber+1);
         //$('.questionNumber').text(questionNumber)});
     console.log('question counter working') 
 }
@@ -82,6 +83,7 @@ function quizStart(){
     $('.submit').on('click', function(event) { 
     $('.start').remove();
     $('.questionAnswerForm').css('display','block');
+    $('.questionNumber').text(1);
     });
 };
 
@@ -141,6 +143,23 @@ function quizEnd(){
     //returns feedback html
     // if score > 8 you did great!
     // if not, try again
+    $('.questionNumber').text(10);
+    if (score >= 8) {
+        return `
+        <div class='results'>
+        <h2>CONGRATULATIONS</h2>
+        <h3>You scored ${score}/10!</h3> 
+        <p>You are in a league of your own! Welcome to the <span class='elite'>l33t g4m3r squad</span>!!</p>
+        </div> `
+    } else {
+        return `
+        <div class='results'>
+        <h2>Epic failure....</h2>
+        <h3>You scored ${score}/10!</h3> 
+        <p>Are you noob, bruh?<span class='elite'>Try again</span>!!</p>
+        <button value="Refresh Page" onClick="window.location.reload();" class='submit'>PLAY AGAIN</button>
+        </div> `
+    };
 };
 
 

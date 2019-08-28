@@ -4,7 +4,7 @@
 
 p {
     color:red;
-    font-size: 100px;
+    font-size: 40px;
 }
 
 .questionAnswerForm {
@@ -30,7 +30,7 @@ li {
     margin: 10px 25px;
 }
 
-.submit {
+.submit, .nextButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
 	box-shadow:inset 0px 1px 0px 0px #caefab;
@@ -89,3 +89,4 @@ fieldset{
 .incorrect{
     background:green;
 }
+
