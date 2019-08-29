@@ -3,50 +3,72 @@
 }
 
 html{
-    background-image: url(https://cdn.wallpapersafari.com/79/1/F39W4g.png);
+    background-image: url(https://img.fireden.net/v/image/1461/44/1461442220639.jpg);
     font-family: monospace;
+    background-size:cover;
+    
 }
 
 p {
-    color:red;
-    font-size: 40px;
+    color: red;
+    text-align: center;
+    font-size: 30px;
+}
+
+.insertCoin{
+    width:20%;
 }
 
 .questionAnswerForm {
-    width: 50%;
+    width: 100%;
 }
 
+fieldset{
+    background-color: black;
+}
+
+
+.questionScoreDisplay {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+} 
 .banner {
     font-family: monospace;
-    font-size: 70px;
+    font-size: 50px;
     display: flex;
     justify-content: space-around;
 }
 
 ul {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    padding: 0px;
 }
 
 li {
     display: inline-block;
-    font-family: monospace;
-    font-size: 20px;
+    font-family: 'Press Start 2P', cursive; 
+    font-size: 15px;
     margin: 10px 25px;
+    color:white;
+
+
 }
 
 .submit, .nextButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
 	box-shadow:inset 0px 1px 0px 0px #caefab;
-	background-color:transparent;
+	background-color:#73ff00;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
 	border:1px solid #268a16;
 	cursor:pointer;
-	color:#306108;
-	font-family:Arial;
+	color:white;
+	font-family: 'Press Start 2P', cursive;;
 	font-size:15px;
 	font-weight:bold;
 	padding:6px 24px;
@@ -71,27 +93,103 @@ li {
     flex-direction: column;
 }
 
+h1 {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
 h2 {
     text-align: center;
     font-family: monospace;
-    color: red;
+    color: rgb(115, 255, 0);
+    font-size: 25px;
+    
+}
+
+h3 {
+    text-align: center;
+    color:white;
 }
 
 .questionAnswerForm{
     display:none;
     margin-right: auto;
     margin-left: auto;
+    
 }
 
 fieldset{
-    width: 75%;
+    width: 100%;
+    margin: 0px;
+
+}
+
+.userFeedback{
+    background-color:black;
 }
 
 .correct {
-    background-color: black;
+    font-family: 'VT323', monospace; 
 }
 
 .incorrect{
-    background:green;
+    font-family: 'VT323', monospace;
 }
 
+img{
+    width: 40%%;
+    justify-content: center;
+    flex-direction: row;
+    height: 150px;
+    display: block;
+    margin: auto;
+    padding: 10px;
+}
+
+.elite{
+    font-family: 'VT323', monospace;
+    color:rgb(51, 199, 83);
+}
+
+/*medium!*/
+
+@media only screen and (min-width:650px){
+  
+}
+
+
+
+
+/*large!*/
+@media only screen and (min-width: 992px){
+    .questionAnswerForm {
+        width: 60%;
+    }
+
+    img{
+        height: 170px;
+    }
+
+    p {
+        font-size: 40px
+    }
+
+    li {
+        font-size: 20px;
+        text-align: center
+    }
+    
+    h2{
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    .elite {
+        font-size: 60px
+    }
+
+
+}
