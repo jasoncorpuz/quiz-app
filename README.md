@@ -1,7 +1,4 @@
 # quiz-app
-video game quiz app! 
-User experience requirements
-The following requirements cover what the app must do, from the user's perspective.
 
 The starting screen should have a button that users can click to start the quiz.
 Users should be prompted through a series of at least 5 multiple choice questions that they can answer.
@@ -14,8 +11,8 @@ receive textual feedback about their answer. If they were incorrect, they should
 be moved onto the next question (or interact with an element to move on).
 Users should be shown their overall score at the end of the quiz. In other words, how many questions they got right out of the total questions asked.
 Users should be able to start a new quiz.
-Technical requirements
-Your quiz app must:
+
+The Quiz: 
 
 Render answer choices in a <form>.
 Use semantic HTML, along with CSS and jQuery.
@@ -23,9 +20,3 @@ Follow a11y best practices.
 Refer back to the checkpoints on accessibility and forms for help.
 Use responsive design.
 Be fully usable by keyboard (which will be easy enough if you start with a form).
-Process requirements
-Before you dive into the app, you'll need to:
-
-gather content for your app. That means typing up the questions you'll ask and gathering any images or icons you'll need.
-think about the user experiences outlined above and how your design must make them possible.
-design your app using HTML wireframes, which are HTML- (and minimal CSS-) only versions of the different screens in your app.
