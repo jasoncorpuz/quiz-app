@@ -152,7 +152,9 @@ img{
 /*medium!*/
 
 @media only screen and (min-width:650px){
-  
+  .insertCoin{
+      width: 20%;
+  }
 }
 
 
@@ -164,10 +166,7 @@ img{
         width: 60%;
     }
 
-    .insertCoin{
-        width: 20%;
-    }
-    
+ 
     img{
         height: 200px;
         width: 300px
