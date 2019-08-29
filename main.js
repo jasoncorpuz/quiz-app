@@ -41,7 +41,7 @@ function questionGen() {
             </form>
         </div>`;
     } else {
-        alert('quiz end!');
+       // alert('quiz end!');
         $('.questionAnswerForm').html(quizEnd());
         // placeholder for quiz end
     }
@@ -149,6 +149,7 @@ function quizEnd(){
         <h2>CONGRATULATIONS</h2>
         <h3>You scored ${score}/10!</h3> 
         <p class='userFeedback'>You are in a league of your own! Welcome to the <span class='elite'>l33t g4m3r squad</span>!!</p>
+        <button value="Refresh Page" onClick="window.location.reload();" class='submit'>PLAY AGAIN</button>
         </div> `
     } else {
         return `
